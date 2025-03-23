@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Compare the prices of Class 11 NCERT books across Meesho, Flipkart, and Amazon. Find the best deals for Physics, Chemistry, Mathematics, and English books.">
+    <meta name="keywords" content="Class 11 NCERT Books, Physics, Chemistry, Mathematics, English, Price Comparison, Meesho, Flipkart, Amazon">
+    <meta name="author" content="Your Name">
+    <meta property="og:title" content="Class 11th NCERT Book Price Comparison">
+    <meta property="og:description" content="Compare the best prices for NCERT Class 11 books across multiple platforms including Meesho, Flipkart, and Amazon.">
+    <meta property="og:image" content="link_to_image">
+    <meta name="robots" content="index, follow">
+    <meta property="og:url" content="https://www.yourwebsite.com">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Class 11th NCERT Book Price Comparison">
+    <meta name="twitter:description" content="Compare Class 11 NCERT books on Meesho, Flipkart, and Amazon. Find the best deals on your NCERT books.">
+    <meta name="twitter:image" content="link_to_image">
+    <title>Class 11th NCERT Book Price Comparison</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+
+        header {
+            background-color: #ffffff;
+            color: #d32f2f;
+            padding: 20px;
+            text-align: center;
+            border-bottom: 2px solid #d32f2f;
+        }
+
+        main {
+            padding: 20px;
+        }
+
+        h1, h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+
+        .book-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .book {
+            border: 1px solid #b35f5f;
+            padding: 15px;
+            background-color: #ffffff;
+            width: 200px;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(192, 25, 25, 0.527);
+            height: 300px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        .book-info {
+            background-color: rgb(219, 0, 0);
+            color: white;
+            padding: 10px;
+            border-radius: 8px;
+            text-align: center;
+            width: 100%;
+        }
+
+        .book a {
+            text-decoration: none;
+            color: #ffffff;
+            font-weight: bold;
+        }
+
+        footer {
+            background-color: #ffffff;
+            color: #d32f2f;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Class 11th NCERT Books Price Comparison</h1>
+        <p>Compare prices of books across Meesho, Flipkart, and Amazon</p>
+    </header>
+    
+    <main>
+        <section id="set1">
+            <h2>Set 1: Physics, Chemistry, Mathematics, English-Hornbill, English-Snapshot</h2>
+            <div class="book-container" id="set1-books">
+                <!-- Book list will go here -->
+            </div>
+        </section>
+        
+        <section id="set2">
+            <h2>Set 2: Physics, Chemistry, Biology, English-Hornbill, English-Snapshot</h2>
+            <div class="book-container" id="set2-books">
+                <!-- Book list will go here -->
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; 2025 Class 11th NCERT Books Price Comparison</p>
+    </footer>
+
+    <script>
+        // JavaScript to dynamically display and sort books
+
+        const set1Books = [
+            { name: 'Set 1 - Books', price: 558, link: 'https://www.meesho.com/ncert-class-11th-pcm-set-of-5-books-physics-part-1-2-chemi/p/2c5rui', website: 'Meesho' },
+            { name: 'Set 1 - Books', price: 558, link: 'https://www.flipkart.com/ncert-class-11th-pcm-set-of-5-books-physics-part-1-2-chemi/p/2c5rui', website: 'Flipkart' },
+            { name: 'Set 1 - Books', price: 558, link: 'https://www.amazon.in/ncert-class-11th-pcm-set-of-5-books-physics-part-1-2-chemi/p/2c5rui', website: 'Amazon' }
+        ];
+
+        const set2Books = [
+            { name: 'Set 2 - Books', price: 600, link: 'https://www.meesho.com/ncert-class-11th-pcm-set-of-5-books-physics-part-1-2-chemi/p/2c5rui', website: 'Meesho' },
+            { name: 'Set 2 - Books', price: 600, link: 'https://www.flipkart.com/ncert-class-11th-pcm-set-of-5-books-physics-part-1-2-chemi/p/2c5rui', website: 'Flipkart' },
+            { name: 'Set 2 - Books', price: 600, link: 'https://www.amazon.in/ncert-class-11th-pcm-set-of-5-books-physics-part-1-2-chemi/p/2c5rui', website: 'Amazon' }
+        ];
+
+        function displayBooks(set, setId) {
+            let container = document.getElementById(setId);
+            set.sort((a, b) => a.price - b.price);
+
+            set.forEach(book => {
+                let bookElement = document.createElement('div');
+                bookElement.classList.add('book');
+                bookElement.innerHTML = `
+                    <div class="book-info">
+                        <h3>${book.name}</h3>
+                        <p>Price: ₹${book.price}</p>
+                        <a href="${book.link}" target="_blank">Buy on ${book.website}</a>
+                    </div>
+                `;
+                container.appendChild(bookElement);
+            });
+        }
+
+        window.onload = function() {
+            displayBooks(set1Books, 'set1-books');
+            displayBooks(set2Books, 'set2-books');
+        };
+    </script>
+</body>
+</html>
